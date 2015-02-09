@@ -1,0 +1,17 @@
+.vm_explorer_details_control {
+    width: 20px;
+    display: inline-block;
+}
+
+.vm_explorer_details_check {
+    margin-left: 5px !important;
+    margin-top: 0;
+}
+
+.vm_explorer_details_value {
+    display: inline-block;
+}
+
+.vm_explorer_details_label {
+    font-weight: bold;
+}

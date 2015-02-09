@@ -1,0 +1,11 @@
+<template name="_vm_explorer_details">
+    <div class="vm_explorer_details_control">
+        <input class="vm_explorer_details_check" type="checkbox" data-bind="if: !isProperty, checked: includeFunction">
+    </div>
+    <div class="vm_explorer_details_value">
+        <span class="vm_explorer_details_label" data-bind="text: name"></span>
+        <span class="vm_explorer_details_label">: </span>
+        <span data-bind="text: value"></span>
+    </div>
+
+</template>

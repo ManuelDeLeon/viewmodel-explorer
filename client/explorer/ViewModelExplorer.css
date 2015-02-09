@@ -1,0 +1,16 @@
+#menu-ViewModelExplorer {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    z-index: 9999;
+    font-size: 10px;
+}
+
+#tabs-1, #tabs-2, #tabs-3, #tabs-4, #tabs-5{
+    display:none;
+}
+
+#accordion-ViewModelExplorer h3 {
+    padding: 0px 10px;
+    font-size: 12px;
+}

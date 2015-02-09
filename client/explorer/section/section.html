@@ -1,0 +1,14 @@
+<template name="_vm_explorer_section">
+    <div class="section">
+        <h3 data-bind="text: name"></h3>
+        <div>
+            <ul class="unstyled">
+                {{#each properties}}
+                    <li>
+                        {{> _vm_explorer_details}}
+                    </li>
+                {{/each}}
+            </ul>
+        </div>
+    </div>
+</template>
