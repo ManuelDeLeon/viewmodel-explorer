@@ -5,7 +5,13 @@ Template._vm_explorer_details.created = ->
 Template._vm_explorer_details.rendered = ->
   this.vm.extend(
     value: -> 
-      if (@isProperty() or @includeFunction()) and @vm()[@name()] then @vm()[@name()]() else ''
+      if (@isProperty() or @includeFunction()) and @vm()[@name()]
+        try
+          @vm()[@name()]()
+        catch
+          ''
+      else
+        ''
     includeFunction: false
   )
   this.vm.bind @

@@ -2,7 +2,7 @@ templateCounter = {}
 anonCounter = 0
 
 Template._vm_explorer_section.created = ->
-  name = if this.data.id
+  name = if this.data.id and this.data.vm._vm_hasId
     this.data.id
   else if this.data.template
     counter = templateCounter[this.data.template] or 0
