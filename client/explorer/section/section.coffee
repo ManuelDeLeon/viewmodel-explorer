@@ -1,7 +1,7 @@
 templateCounter = {}
 anonCounter = 0
 
-Template._vm_explorer_section.created = ->
+Template._vm_explorer_section.onCreated ->
   name = if this.data.id and this.data.vm._vm_hasId
     this.data.id
   else if this.data.template
@@ -19,13 +19,13 @@ Template._vm_explorer_section.created = ->
     isProperty: p in @data.vm._vm_properties
     section: name
 
-  this.vm = new ViewModel("_vm_explorer_section_#{name}", this.data).extend(
+  this.vm = new ViewModel(this.data).extend(
     name: name
     properties: -> Template.instance().properties
   ).addHelper('properties', @)
 
 
-Template._vm_explorer_section.rendered = ->
+Template._vm_explorer_section.onRendered ->
   this.vm.bind @
   this.$(".section").accordion(
     header: "h3"

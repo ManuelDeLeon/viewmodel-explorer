@@ -1,7 +1,7 @@
 Package.describe({
-    name: 'manuel:viewmodel-explorer',
+    name: 'manuel:viewmodel-explorer2',
     summary: "Side panel for manuel:viewmodel",
-    version: "1.0.2",
+    version: "1.0.3",
     git: "https://github.com/ManuelDeLeon/viewmodel-explorer",
     debugOnly: true
 });

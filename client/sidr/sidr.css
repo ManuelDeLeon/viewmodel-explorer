@@ -54,7 +54,7 @@
 }
 .sidr ul {
     display: block;
-    margin: 0 0 15px;
+    margin: 0;
     padding: 0;
     border-top: 1px solid #dfdfdf;
     border-bottom: 1px solid #fff;

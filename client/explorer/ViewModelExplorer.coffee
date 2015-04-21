@@ -1,11 +1,19 @@
+Session.setDefault('_vm_explorer_Show', false)
+Template._vm_explorer_ViewModelExplorer.viewmodel
+  close: ->
+    Session.set('_vm_explorer_Show', false)
+    $.sidr('close')
+  viewmodels: ->
+    vm for vm in ViewModel.all.list() when not ~vm.template.indexOf("_vm_explorer_")
+  onCreated: ->
+    document.onkeydown = (e) ->
+      evtobj = window.event or e
+      if (evtobj.keyCode == 69 && evtobj.ctrlKey && evtobj.shiftKey)
+        Session.set('_vm_explorer_Show', not Session.get('_vm_explorer_Show'))
+        $.sidr()
+  onRendered: ->
+    $('#sidr').sidr()
+    $.sidr('open') if Session.get('_vm_explorer_Show')
+, 'viewmodels'
 
-Template._vm_explorer_ViewModelExplorer.created = ->
-  this.vm = new ViewModel( "_vm_explorer_ViewModelExplorer",
-    close: -> $.sidr('close', 'sidr')
-    viewmodels: ->
-      vm for vm in ViewModel.all.list() when ((not vm.template) or vm.template.indexOf("_vm_explorer_")) and not (vm.id and vm.id.indexOf("_vm_explorer_") is 0) isnt 0
-  ).addHelper('viewmodels', @)
 
-Template._vm_explorer_ViewModelExplorer.rendered = ->
-  this.vm.bind @
-  $('#menu-ViewModelExplorer').sidr()

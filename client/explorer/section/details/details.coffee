@@ -1,10 +1,10 @@
 
-Template._vm_explorer_details.created = ->
-  this.vm = new ViewModel("_vm_explorer_details_#{this.data.section}_#{this.data.name}", this.data)
+Template._vm_explorer_details.onCreated ->
+  this.vm = new ViewModel(this.data)
 
-Template._vm_explorer_details.rendered = ->
+Template._vm_explorer_details.onRendered ->
   this.vm.extend(
-    value: -> 
+    value: ->
       if (@isProperty() or @includeFunction()) and @vm()[@name()]
         try
           @vm()[@name()]()
