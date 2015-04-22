@@ -24,11 +24,17 @@ Template._vm_explorer_section.onCreated ->
     properties: -> Template.instance().properties
   ).addHelper('properties', @)
 
-
 Template._vm_explorer_section.onRendered ->
-  this.vm.bind @
+  vm = this.vm
+  vm.bind @
+  expandName = "_vm_explorer_expand_" + vm.name()
+  expand = if Session.get(expandName) then 0 else 1
+
   this.$(".section").accordion(
     header: "h3"
     collapsible: true
-    active: false
+    active: expand
+    activate: (event, ui) ->
+      expand = ui.newHeader.length > 0
+      Session.set(expandName, expand)
   )

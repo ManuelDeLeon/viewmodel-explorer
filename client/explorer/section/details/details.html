@@ -1,11 +1,14 @@
 <template name="_vm_explorer_details">
-    <div class="vm_explorer_details_control">
-        <input class="vm_explorer_details_check" type="checkbox" data-bind="if: !isProperty, checked: includeFunction">
-    </div>
-    <div class="vm_explorer_details_value">
+  <table>
+    <tr>
+      <td class="vm_explorer_details_check">
+        <input type="checkbox" data-bind="if: !isProperty, checked: includeFunction">
+      </td>
+      <td>
         <span class="vm_explorer_details_label" data-bind="text: name"></span>
-        <span class="vm_explorer_details_label">: </span>
+        <span class="vm_explorer_details_label">:</span>
         <span data-bind="text: value"></span>
-    </div>
-
+      </td>
+    </tr>
+  </table>
 </template>
