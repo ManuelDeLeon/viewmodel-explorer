@@ -29,8 +29,8 @@ Template._vm_explorer_section.onRendered ->
   vm.bind @
   expandName = "_vm_explorer_expand_" + vm.name()
   expand = if Session.get(expandName) then 0 else 1
-
-  this.$(".section").accordion(
+  self = this
+  self.$(".section").accordion(
     header: "h3"
     collapsible: true
     active: expand
