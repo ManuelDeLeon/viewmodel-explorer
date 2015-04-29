@@ -2,7 +2,7 @@ Session.setDefault('_vm_explorer_Show', false)
 
 Template._vm_explorer_ViewModelExplorer.helpers
   viewmodels: ->
-    vm for vm in ViewModel.all.list() when not ~vm.template.indexOf("_vm_explorer_")
+    vm for vm in ViewModel.all.list() when not vm.template or not ~vm.template.indexOf("_vm_explorer_")
 
 Template._vm_explorer_ViewModelExplorer.onCreated ->
   document.onkeydown = (e) ->
